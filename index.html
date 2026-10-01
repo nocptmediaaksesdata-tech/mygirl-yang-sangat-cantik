@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#801336" />
+  <title>Happy National My Girl Day! 💖</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+      text-align: center;
+      background: linear-gradient(135deg, #2d142c, #801336, #c72c41);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 420px;
+      padding: 28px 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+      animation: muncul 0.8s ease;
+    }
+
+    @keyframes muncul {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .foto {
+      width: 125px;
+      height: 125px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #ee4540;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #801336;
+      font-size: 23px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #444;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    button {
+      font-family: inherit;
+      padding: 12px 28px;
+      margin: 6px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #c72c41, #801336);
+      box-shadow: 0 6px 18px rgba(128, 19, 54, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(128, 19, 54, 0.45);
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+      transform: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .flower-stage {
+      display: inline-block;
+      margin: 18px 0;
+      font-size: 68px;
+      transform-origin: bottom center;
+      transition: transform 0.3s ease;
+    }
+
+    .shake {
+      animation: shake 0.4s ease;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-8deg); }
+      50% { transform: rotate(8deg); }
+      75% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .bloom-animation {
+      animation: bloom 1.2s forwards;
+    }
+
+    @keyframes bloom {
+      0% { transform: scale(0.5) rotate(-8deg); }
+      50% { transform: scale(1.35) rotate(8deg); }
+      100% { transform: scale(1.08) rotate(0deg); }
+    }
+
+    .counter-text {
+      font-size: 12px;
+      color: #777;
+      font-style: italic;
+    }
+
+    .envelope-area {
+      display: flex;
+      justify-content: center;
+      margin: 26px 0 18px;
+    }
+
+    .envelope-wrapper {
+      position: relative;
+      width: 100px;
+      height: 68px;
+      background: #ff9eae;
+      border-radius: 0 0 7px 7px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      overflow: visible;
+    }
+
+    .envelope-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 38px solid #ffb6c1;
+      transform-origin: top;
+      transition: transform 0.7s ease;
+      z-index: 3;
+    }
+
+    .envelope-wrapper::after {
+      content: "💌";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -40%);
+      font-size: 28px;
+      z-index: 2;
+    }
+
+    .open-envelope::before {
+      transform: rotateX(180deg);
+      z-index: 0;
+    }
+
+    .surat-box {
+      max-height: 250px;
+      overflow-y: auto;
+      padding: 18px;
+      margin-top: 14px;
+      text-align: left;
+      font-size: 13.5px;
+      color: #333;
+      border-radius: 12px;
+      border-left: 4px solid #801336;
+      background: #fff7f9;
+      scrollbar-width: thin;
+      scrollbar-color: #c72c41 #ffe5ea;
+    }
+
+    .surat-box p {
+      margin-bottom: 15px;
+    }
+
+    .scroll-info {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #999;
+      font-style: italic;
+    }
+
+    .gift-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .btn-gift {
+      width: 100%;
+      background: linear-gradient(135deg, #ff69b4, #c72c41);
+    }
+
+    .reward-icon {
+      margin: 14px 0;
+      font-size: 62px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    .heart {
+      position: fixed;
+      top: -50px;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-40px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 14px;
+      }
+
+      .container {
+        padding: 22px 18px;
+      }
+
+      h1 {
+        font-size: 21px;
+      }
+
+      .foto {
+        width: 110px;
+        height: 110px;
+      }
+
+      .flower-stage {
+        font-size: 62px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="musik-romantis" src="musik.mp3" loop preload="auto"></audio>
+
+  <main class="container">
+    <img
+      src="pacar.jpg"
+      alt="My Girl"
+      class="foto"
+      onerror="this.style.display='none'"
+    >
+
+    <section id="game-stage">
+      <h1>Happy National My Girl Day! 🤍</h1>
+
+      <p>
+        Aku punya sesuatu buat kamu, tapi kamu harus rawat benih bunga ini dulu
+        sampai mekar yaa! 🥺
+      </p>
+
+      <div id="flower" class="flower-stage">🌱</div>
+
+      <p id="counter" class="counter-text">
+        Butuh 3 kali siraman air lagi...
+      </p>
+
+      <button id="btn-siram" type="button" onclick="siramBunga()">
+        Siram Bunga 💦
+      </button>
+    </section>
+
+    <section id="result-stage" class="hidden">
+      <h1>Bunganya Mekar Buat Kamu! 🌸</h1>
+
+      <p>
+        Makasih udah ngerawat bunganya. Sekarang ada surat kecil dari aku.
+        Dibaca sampai habis yaa... 💌
+      </p>
+
+      <div class="envelope-area">
+        <div id="envelope" class="envelope-wrapper"></div>
+      </div>
+
+      <div id="surat-box" class="surat-box">
+        <p><strong>Hai sayangku, my girl, si cantik favoritku...</strong></p>
+
+        <p>
+          Selamat National My Girl Day yaa! Lewat web sederhana ini, aku cuma mau
+          bilang terima kasih banyak buat segalanya. Makasih udah hadir di hidup
+          aku, makasih udah jadi orang yang selalu dengerin keluh kesah aku, dan
+          makasih udah bertahan sama aku yang kadang keras kepala atau
+          kekanak-kanakan ini. 🥺
+        </p>
+
+        <p>
+          Aku bersyukur banget setiap hari bisa kenal dan milikin kamu. Kamu itu
+          salah satu alasan kenapa hari-hari aku yang capek bisa berubah jadi
+          senyuman lagi.
+        </p>
+
+        <p>
+          Jangan pernah ngerasa sendirian ya, karena ada aku yang bakal selalu
+          siap dukung kamu, nemenin kamu jajan, nemenin kamu ketika sedih, atau
+          sekadar dengerin cerita random kamu seharian.
+        </p>
+
+        <p>
+          Tetap jadi <em>my girl</em> yang aku kenal yaa. Semoga kita bisa terus
+          ngelewatin banyak hal bareng-bareng, makin dewasa bareng, dan semoga
+          cita-cita kita bisa terwujud satu per satu.
+        </p>
+
+        <p>
+          I love you so much, more than words can say! 🌹✨
+        </p>
+      </div>
+
+      <div id="scroll-info" class="scroll-info">
+        Scroll suratnya sampai bawah yaa 💕
+      </div>
+
+      <button
+        id="btn-petik"
+        type="button"
+        onclick="pindahKeHadiah()"
+        disabled
+        style="margin-top: 15px;"
+      >
+        Petik Bunganya 🌹
+      </button>
+    </section>
+
+    <section id="gift-stage" class="hidden">
+      <h1>Hadiah Buat My Girl... 🎁</h1>
+
+      <div class="reward-icon">🎀</div>
+
+      <p>
+        Karena kamu udah baca suratnya sampai habis, sekarang kamu berhak nagih
+        satu reward dari cowokmu ini. Pilih salah satu yuk! 😜
+      </p>
+
+      <div class="gift-options">
+        <button
+          class="btn-gift"
+          type="button"
+          onclick="pilihHadiah('PAP Ganteng Kamu 📸')"
+        >
+          PAP 📸
+        </button>
+
+        <button
+          class="btn-gift"
+          type="button"
+          onclick="pilihHadiah('VN Kiss Kamu 💋')"
+        >
+          VN Kiss 💋
+        </button>
+      </div>
+    </section>
+
+    <section id="closing-stage" class="hidden">
+      <h1>Pilihan yang Bagus! 💖</h1>
+
+      <div class="reward-icon">💝</div>
+
+      <p>
+        Kamu memilih
+        <strong id="hadiah-terpilih" style="color:#c72c41;"></strong>.
+      </p>
+
+      <p>
+        Buruan tagih hadiahnya ke chat aku sekarang juga ya! Nggak ada alasan
+        buat nolak. 😜
+      </p>
+
+      <p
+        style="
+          font-size:16px;
+          font-weight:700;
+          color:#801336;
+          margin-top:20px;
+        "
+      >
+        I Love You So Much, My Girl! 🤍✨
+      </p>
+    </section>
+  </main>
+
+  <script>
+    let jumlahSiram = 0;
+    let heartInterval = null;
+    let musikSudahDicoba = false;
+
+    const flowerStages = ["🌱", "🌿", "🌷", "🌸"];
+
+    function mulaiMusik() {
+      const musik = document.getElementById("musik-romantis");
+      if (!musik) return;
+
+      musik.volume = 0.45;
+
+      musik.play()
+        .then(() => {
+          musikSudahDicoba = true;
+        })
+        .catch(() => {
+          console.log("Audio belum dapat diputar.");
+        });
+    }
+
+    function siramBunga() {
+      if (jumlahSiram >= 3) return;
+
+      if (!musikSudahDicoba) {
+        mulaiMusik();
+      }
+
+      jumlahSiram++;
+
+      const flower = document.getElementById("flower");
+      const counter = document.getElementById("counter");
+      const tombol = document.getElementById("btn-siram");
+
+      flower.classList.remove("shake");
+      void flower.offsetWidth;
+      flower.classList.add("shake");
+
+      if (jumlahSiram === 1) {
+        flower.textContent = flowerStages[1];
+        counter.textContent = "Butuh 2 kali siraman air lagi...";
+      } else if (jumlahSiram === 2) {
+        flower.textContent = flowerStages[2];
+        counter.textContent = "Tinggal 1 kali siram lagi, ayo! 🥺";
+      } else if (jumlahSiram === 3) {
+        flower.textContent = flowerStages[3];
+        flower.classList.remove("shake");
+        flower.classList.add("bloom-animation");
+
+        counter.textContent = "Yeay! Bunganya mekar! 🌸";
+        tombol.disabled = true;
+        tombol.textContent = "Sudah Mekar 🌸";
+
+        setTimeout(tampilkanSurat, 1300);
+      }
+    }
+
+    function tampilkanSurat() {
+      const gameStage = document.getElementById("game-stage");
+      const resultStage = document.getElementById("result-stage");
+      const envelope = document.getElementById("envelope");
+
+      gameStage.classList.add("hidden");
+      resultStage.classList.remove("hidden");
+
+      setTimeout(() => {
+        envelope.classList.add("open-envelope");
+      }, 350);
+
+      setTimeout(cekSuratPerluScroll, 50);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    const suratBox = document.getElementById("surat-box");
+
+    suratBox.addEventListener("scroll", function () {
+      const posisiScroll = suratBox.scrollTop + suratBox.clientHeight;
+      const tinggiTotal = suratBox.scrollHeight;
+
+      if (posisiScroll >= tinggiTotal - 8) {
+        aktifkanTombolPetik();
+      }
+    });
+
+    function aktifkanTombolPetik() {
+      const tombolPetik = document.getElementById("btn-petik");
+      const info = document.getElementById("scroll-info");
+
+      tombolPetik.disabled = false;
+      info.textContent = "Suratnya udah selesai dibaca 💖";
+    }
+
+    function cekSuratPerluScroll() {
+      if (suratBox.scrollHeight <= suratBox.clientHeight + 5) {
+        aktifkanTombolPetik();
+      }
+    }
+
+    function pindahKeHadiah() {
+      document.getElementById("result-stage").classList.add("hidden");
+      document.getElementById("gift-stage").classList.remove("hidden");
+      buatLedakanEmoji(15);
+    }
+
+    function pilihHadiah(namaHadiah) {
+      document.getElementById("gift-stage").classList.add("hidden");
+      document.getElementById("closing-stage").classList.remove("hidden");
+      document.getElementById("hadiah-terpilih").textContent = namaHadiah;
+
+      mulaiHujanEmoji();
+      buatLedakanEmoji(25);
+    }
+
+    function clickHadiah(namaHadiah) {
+      pilihHadiah(namaHadiah);
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+
+      const emojis = ["❤️", "💖", "🌸", "✨", "🌷", "💕", "🤍"];
+      heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      heart.style.opacity = Math.random() * 0.6 + 0.35;
+      heart.style.fontSize = (Math.random() * 15 + 15) + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5500);
+    }
+
+    function mulaiHujanEmoji() {
+      if (heartInterval) return;
+
+      heartInterval = setInterval(createHeart, 280);
+    }
+
+    function buatLedakanEmoji(jumlah = 15) {
+      for (let i = 0; i < jumlah; i++) {
+        setTimeout(() => {
+          createHeart();
+        }, i * 70);
+      }
+    }
+
+    setInterval(createHeart, 900);
+  </script>
+</body>
+</html>
